@@ -16,6 +16,11 @@ export class Authservice {
     async createAccount({email, password, name}){
         try {
             const userAccount = await this.account.create(ID.unique(), email, password, name)
+            if(userAccount){
+                // call another method
+            }else{
+                return userAccount
+            }
         } catch (error) {
             throw error;
         }
